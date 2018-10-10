@@ -22,17 +22,44 @@
 
     <h4>Task 4 b</h4>
 
-
+    <div id = "addText">
+      
+    </div>
+    
     <h4>Task 4 c</h4>
-
-
+    <button type="button"  id="hlBtn">Hello World!</button>
+    <button type="button"  id="green">GREEN</button>
+    <button type="button"  id="red">RED</button>
+    <button type="button"  id="google">GOOGLE</button>
+  
     <!-- Insert your JavaScript file -->
 
   </body>
 </html>
 
 <script>
-  var heading = document.getElementById("heading");
-  console.log( heading.innerText);
-  heading.innerHTML = "ASDAKSFASLHLJDFJHSAJHSALKJK";
+  // var heading = document.getElementById("heading");
+  // console.log( heading.innerText);
+  // heading.innerHTML = "ASDAKSFASLHLJDFJHSAJHSALKJK";
+  var greenBtn = document.getElementById("green");
+  var redBtn = document.getElementById("red");
+  var ggBtn = document.getElementById("google");
+  var heloBtn = document.getElementById("hlBtn");
+  heloBtn.addEventListener( "click", function(){ 
+    document.getElementById("addText").innerHTML = "<p>HELLLO WORLD!<p>"
+  })
+  
+  redBtn.addEventListener( "click", function(){ 
+    document.body.style.backgroundColor = "red";
+  })
+  
+  greenBtn.addEventListener( "click", function(){ 
+    document.body.style.backgroundColor = "green";
+  })
+  
+  ggBtn.addEventListener( "click", function(){ 
+    window.location.href = "https://www.google.com/";
+  })
+  
+  
 </script>
