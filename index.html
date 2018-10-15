@@ -1,66 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DOM Manipulation Exercises</title>
-    <script src="jquery-3.3.1.min.js"></script>
-  </head>
-  <body>
 
-    <h2 id="heading">DOM Manipulation Exercises</h3>
-    <h4>Task 2 a</h4>
-    <div id="task2a"></div>
+<head>
+  <title>DOM Manipulation Exercises</title>
+  <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+  <style>
+    div.added {
+      background-color: lightgrey;
+      width: 300px;
+      border: 25px solid black;
+      padding: 25px;
+      margin: 25px;
+    }
+  </style>
+</head>
 
-    <h4>Task 2 b</h4>
+<body>
 
+  <h2 id="heading">DOM Manipulation Exercises</h2>
+  <h4>Task 2 a</h4>
+  <div id="task2a"></div>
+  <h4>Task 2 b</h4>
+  <h4>Task 2 c</h4>
+  <h3>With jQuery</h3>
+  <h4>Task 4 a</h4>
+  <div id="task4a"></div>
+  <h4>Task 4 b</h4>
+  <div id="addText">
 
-    <h4>Task 2 c</h4>
+  </div>
 
-
-    <!-- ***** -->
-    <h3>With jQuery</h3>
-    <h4>Task 4 a</h4>
-    <div id="task4a"></div>
-
-    <h4>Task 4 b</h4>
-
-    <div id = "addText">
-      
+  <h4>Task 4 c</h4>
+  <button type="button" id="hlBtn">Hello World!</button>
+  <button type="button" id="green">GREEN</button>
+  <button type="button" id="red">RED</button><br>
+  <div class="added">
+    <input type="textbox" id = "n1" value="0"></input>
+    <input type="textbox" id = "n2" value="0"></input>
+    <button type="button" id="google">ADD</button>
+    <div id="addText2">
     </div>
-    
-    <h4>Task 4 c</h4>
-    <button type="button"  id="hlBtn">Hello World!</button>
-    <button type="button"  id="green">GREEN</button>
-    <button type="button"  id="red">RED</button>
-    <button type="button"  id="google">GOOGLE</button>
-  
-    <!-- Insert your JavaScript file -->
+  </div>
 
-  </body>
+
+  <script>
+    var greenBtn = $("#green");
+    var redBtn = $("#red");
+    var ggBtn = $("#google");
+    var heloBtn = $("#hlBtn");
+
+
+    heloBtn.on({
+      mouseenter: function() {
+        $(this).css("background-color", "lightgray");
+      },
+      click: function() {
+        $("#addText").html("<p>HELLO WORLD</p>");
+      }
+    });
+
+    greenBtn.on({
+      mouseenter: function() {
+        $(this).css("background-color", "lightgray");
+      },
+      click: function() {
+        $(document.body).css("background-color", "green");
+      }
+    });
+
+    redBtn.on({
+      mouseenter: function() {
+        $(this).css("background-color", "lightgray");
+      },
+      click: function() {
+        $(document.body).css("background-color", "red");
+      }
+    });
+
+    ggBtn.on({
+      mouseenter: function() {
+        $(this).css("background-color", "lightgray");
+      },
+      click: function() {
+        var num1 =  $('#n1').val();
+        var num2 =  $('#n2').val();
+        var sum =    parseInt(num1) + parseInt(num2);
+        var str = "<p>The sum is: " + sum + " </p>";
+        $("#addText2").html(str);
+      }
+    });
+  </script>
+</body>
+
 </html>
-
-<script>
-  // var heading = document.getElementById("heading");
-  // console.log( heading.innerText);
-  // heading.innerHTML = "ASDAKSFASLHLJDFJHSAJHSALKJK";
-  var greenBtn = document.getElementById("green");
-  var redBtn = document.getElementById("red");
-  var ggBtn = document.getElementById("google");
-  var heloBtn = document.getElementById("hlBtn");
-  heloBtn.addEventListener( "click", function(){ 
-    document.getElementById("addText").innerHTML = "<p>HELLLO WORLD!<p>"
-  })
-  
-  redBtn.addEventListener( "click", function(){ 
-    document.body.style.backgroundColor = "red";
-  })
-  
-  greenBtn.addEventListener( "click", function(){ 
-    document.body.style.backgroundColor = "green";
-  })
-  
-  ggBtn.addEventListener( "click", function(){ 
-    window.location.href = "https://www.google.com/";
-  })
-  
-  
-</script>
